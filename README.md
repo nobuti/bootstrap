@@ -1,4 +1,4 @@
-bootstrap
-=========
+Bootstrap scripts for Rails development
+=======================================
 
-Bootstrap machine for rails development
+[Placeholder for instructions]

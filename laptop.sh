@@ -150,5 +150,11 @@ fancy_echo "Installing rabbitmq ..."
 
 fancy_echo "Installing autojump ..."
   brew install autojump
+
+fancy_echo "Installing s3cmd ..."
+  brew install s3cmd
+
+fancy_echo "Installing pv ..."
+  brew install pv
 ### end common-components/personal-additions
 

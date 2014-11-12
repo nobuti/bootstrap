@@ -157,6 +157,9 @@ fancy_echo "Installing s3cmd ..."
 fancy_echo "Installing pv ..."
   brew install pv
 
+fancy_echo "Installing psgrep ..."
+  brew install psgrep
+
 fancy_echo "Installing rmtrash"
   brew install rmtrash
 ### end common-components/personal-additions

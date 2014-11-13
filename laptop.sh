@@ -162,5 +162,11 @@ fancy_echo "Installing psgrep ..."
 
 fancy_echo "Installing rmtrash"
   brew install rmtrash
+
+fancy_echo "Installing node"
+  brew install node
+
+fancy_echo "Installing ngrok"
+  brew install ngrok
 ### end common-components/personal-additions
 

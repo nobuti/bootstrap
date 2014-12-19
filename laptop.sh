@@ -61,6 +61,9 @@ fi
 fancy_echo "Updating Homebrew formulas ..."
 brew update
 ### end mac-components/homebrew
+fancy_echo "Removing old git installation and installing git from homebrew..."
+  sudo rm -rf /usr/bin/git
+  brew_install_or_upgrade 'git'
 
 fancy_echo "Installing The Silver Searcher (better than ack or grep) to search the contents of files ..."
   brew_install_or_upgrade 'the_silver_searcher'

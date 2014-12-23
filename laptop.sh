@@ -171,5 +171,11 @@ fancy_echo "Installing node"
 
 fancy_echo "Installing ngrok"
   brew install ngrok
+
+fancy_echo "Installing scss-lint"
+  gem install scss-lint
+
+fancy_echo "Installing js-hint"
+  npm install jshint
 ### end common-components/personal-additions
 

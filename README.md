@@ -1,12 +1,6 @@
-Bootstrap scripts for Rails development
-=======================================
+Bootstrap laptop scripts
+========================
 
-Install a C compiler:
+Install a C compiler installing xcode and agree terms.
 
-For Snow Leopard (10.6): use OS X GCC Installer.
-
-For Lion (10.7) or Mountain Lion (10.8): use Command Line Tools for XCode.
-
-For Mavericks (10.9): run ```sudo xcodebuild -license``` and follow the instructions to accept the XCode agreement. Then run ```xcode-select --install``` in your terminal and then click "Install".
-
-Next run ```./laptop.sh``` and last ```./install-187```
+Next run ```./laptop.sh```

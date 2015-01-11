@@ -145,9 +145,13 @@ fancy_echo "Installing rabbitmq ..."
 fancy_echo "Installing autojump ..."
   brew install autojump
 
+fancy_echo "Installing wget ..."
+  brew install wget
+
 fancy_echo "Installing nvm ..."
   brew install nvm
-
+  printf 'eval "source $(brew --prefix nvm)/nvm.sh"\n' >> ~/.zshrc
+  
 fancy_echo "Installing node 0.10 ..."
   nvm install 0.10
 

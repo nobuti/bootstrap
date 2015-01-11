@@ -65,9 +65,6 @@ fancy_echo "Removing old git installation and installing git from homebrew..."
   sudo rm -rf /usr/bin/git
   brew_install_or_upgrade 'git'
 
-fancy_echo "Installing The Silver Searcher (better than ack or grep) to search the contents of files ..."
-  brew_install_or_upgrade 'the_silver_searcher'
-
 fancy_echo "Installing vim from Homebrew to get the latest version ..."
   brew_install_or_upgrade 'vim'
 
@@ -88,9 +85,6 @@ fancy_echo "Installing rbenv, to change Ruby versions ..."
   fi
 
   export PATH="$HOME/.rbenv/bin:$PATH"
-
-fancy_echo "Installing MySQL ..."
-  brew install mysql
 
 fancy_echo "Installing rbenv-gem-rehash so the shell automatically picks up binaries after installing gems with binaries..."
   brew_install_or_upgrade 'rbenv-gem-rehash'
@@ -125,28 +119,25 @@ fancy_echo "Configuring Bundler for faster, parallel gem installation ..."
   bundle config --global jobs $((number_of_cores - 1))
 ### end mac-components/bundler
 
-fancy_echo "Installing Rails ..."
-  gem install rails --no-document
-
-### end common-components/default-gems
-
 fancy_echo "Installing Heroku CLI client ..."
   brew_install_or_upgrade 'heroku-toolbelt'
 
 fancy_echo "Installing the heroku-config plugin to pull config variables locally to be used as ENV variables ..."
   heroku plugins:install git://github.com/ddollar/heroku-config.git
-
-fancy_echo "Installing foreman ..."
-  curl -sLo /tmp/foreman.pkg http://assets.foreman.io/foreman/foreman.pkg && \
-  sudo installer -pkg /tmp/foreman.pkg -tgt /
 ### end mac-components/heroku
 
 fancy_echo "Installing GitHub CLI client ..."
   brew_install_or_upgrade 'hub'
 ### end mac-components/github
 
-fancy_echo "Installing sphinx 0.9.9 ..."
-  brew install https://raw.github.com/demimismo/homebrew-sphinx/master/sphinx.rb
+fancy_echo "Installing mysql ..."
+  brew install mysql
+
+fancy_echo "Installing mongo ..."
+  brew install mongodb
+
+fancy_echo "Installing redis ..."
+  brew install redis
 
 fancy_echo "Installing rabbitmq ..."
   brew install rabbitmq
@@ -154,28 +145,34 @@ fancy_echo "Installing rabbitmq ..."
 fancy_echo "Installing autojump ..."
   brew install autojump
 
-fancy_echo "Installing s3cmd ..."
-  brew install s3cmd
+fancy_echo "Installing nvm ..."
+  brew install nvm
 
-fancy_echo "Installing pv ..."
-  brew install pv
+fancy_echo "Installing node 0.10 ..."
+  nvm install 0.10
 
-fancy_echo "Installing psgrep ..."
-  brew install psgrep
+fancy_echo "Configuring node 0.10 as default ..."
+  nvm use 0.10
+
+fancy_echo "Installing icu 51 ..."
+  wget http://download.icu-project.org/files/icu4c/51.2/icu4c-51_2-src.tgz
+  tar xvf icu4c-51_2-src.tgz
+  cd icu/source
+  chmod +x runConfigureICU configure install-sh
+  ./runConfigureICU MacOSX
+  make
+  sudo make install
 
 fancy_echo "Installing rmtrash"
   brew install rmtrash
 
-fancy_echo "Installing node"
-  brew install node
-
 fancy_echo "Installing ngrok"
   brew install ngrok
 
-fancy_echo "Installing scss-lint"
-  gem install scss-lint
-
 fancy_echo "Installing js-hint"
   npm install jshint
+
+fancy_echo "Installing nodemon"
+  npm install -g nodemon
 ### end common-components/personal-additions
 

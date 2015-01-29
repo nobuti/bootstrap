@@ -131,25 +131,28 @@ fancy_echo "Installing GitHub CLI client ..."
 ### end mac-components/github
 
 fancy_echo "Installing mysql ..."
-  brew install mysql
+  brew_install_or_upgrade mysql
+
+fancy_echo "Installing postgresql ..."
+  brew_install_or_upgrade postgresql
 
 fancy_echo "Installing mongo ..."
-  brew install mongodb
+  brew_install_or_upgrade mongodb
 
 fancy_echo "Installing redis ..."
-  brew install redis
+  brew_install_or_upgrade redis
 
 fancy_echo "Installing rabbitmq ..."
-  brew install rabbitmq
+  brew_install_or_upgrade rabbitmq
 
 fancy_echo "Installing autojump ..."
-  brew install autojump
+  brew_install_or_upgrade autojump
 
 fancy_echo "Installing wget ..."
-  brew install wget
+  brew_install_or_upgrade wget
 
 fancy_echo "Installing nvm ..."
-  brew install nvm
+  brew_install_or_upgrade nvm
   printf 'eval "source $(brew --prefix nvm)/nvm.sh"\n' >> ~/.zshrc
   
 fancy_echo "Installing node 0.10 ..."
@@ -168,10 +171,10 @@ fancy_echo "Installing icu 51 ..."
   sudo make install
 
 fancy_echo "Installing rmtrash"
-  brew install rmtrash
+  brew_install_or_upgrade rmtrash
 
 fancy_echo "Installing ngrok"
-  brew install ngrok
+  brew_install_or_upgrade ngrok
 
 fancy_echo "Installing js-hint"
   npm install jshint

@@ -128,17 +128,21 @@ fancy_echo "Updating Homebrew formulas ..."
 brew update
 
 brew_install_or_upgrade 'git'
-brew_install_or_upgrade 'mysql'
-brew_launchctl_restart 'mysql'
 brew_install_or_upgrade 'postgres'
 brew_launchctl_restart 'postgresql'
+brew_install_or_upgrade 'mysql'
+brew_launchctl_restart 'mysql'
+brew_install_or_upgrade 'redis'
+brew_launchctl_restart 'redis'
 brew_install_or_upgrade 'the_silver_searcher'
 brew_install_or_upgrade 'imagemagick'
 brew_install_or_upgrade 'hub'
-brew_install_or_upgrade 'nvm'
-append_to_zshrc 'eval "source $(brew --prefix nvm)/nvm.sh"' 1
+brew_install_or_upgrade 'autojump'
+brew_install_or_upgrade 'rmtrash'
+brew_install_or_upgrade 'ngrok'
 
-brew_install_or_upgrade 'node'
+brew_install_or_upgrade nvm
+append_to_zshrc 'eval "source $(brew --prefix nvm)/nvm.sh"'
 
 brew_install_or_upgrade 'rbenv'
 brew_install_or_upgrade 'ruby-build'
@@ -148,6 +152,7 @@ append_to_zshrc 'eval "$(rbenv init - zsh --no-rehash)"' 1
 
 brew_install_or_upgrade 'openssl'
 brew unlink openssl && brew link openssl --force
+brew_install_or_upgrade 'libyaml'
 
 ruby_version="$(curl -sSL http://ruby.thoughtbot.com/latest)"
 
@@ -169,13 +174,3 @@ fancy_echo "Configuring Bundler ..."
   bundle config --global jobs $((number_of_cores - 1))
 
 brew_install_or_upgrade 'heroku-toolbelt'
-
-# Custom
-brew_install_or_upgrade 'autojump'
-brew_install_or_upgrade 'rmtrash'
-brew_install_or_upgrade 'ngrok'
-nvm install 0.12
-nvm use 0.12
-
-# brew_install_or_upgrade 'redis'
-# brew_launchctl_restart 'redis'

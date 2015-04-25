@@ -141,7 +141,7 @@ brew_install_or_upgrade 'autojump'
 brew_install_or_upgrade 'rmtrash'
 brew_install_or_upgrade 'ngrok'
 
-brew_install_or_upgrade nvm
+brew_install_or_upgrade 'nvm'
 append_to_zshrc 'eval "source $(brew --prefix nvm)/nvm.sh"'
 
 brew_install_or_upgrade 'rbenv'

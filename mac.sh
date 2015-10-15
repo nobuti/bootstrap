@@ -127,14 +127,14 @@ fi
 fancy_echo "Updating Homebrew formulas ..."
 brew update
 
+fancy_echo "Removing old git installation and installing git from homebrew..."
+sudo rm -rf /usr/bin/git
+
 brew_install_or_upgrade 'git'
 brew_install_or_upgrade 'postgres'
 brew_launchctl_restart 'postgresql'
 brew_install_or_upgrade 'mysql'
 brew_launchctl_restart 'mysql'
-brew_install_or_upgrade 'redis'
-brew_launchctl_restart 'redis'
-brew_install_or_upgrade 'the_silver_searcher'
 brew_install_or_upgrade 'imagemagick'
 brew_install_or_upgrade 'hub'
 brew_install_or_upgrade 'autojump'
@@ -170,7 +170,7 @@ gem update --system
 gem_install_or_update 'bundler'
 
 fancy_echo "Configuring Bundler ..."
-  number_of_cores=$(sysctl -n hw.ncpu)
-  bundle config --global jobs $((number_of_cores - 1))
+number_of_cores=$(sysctl -n hw.ncpu)
+bundle config --global jobs $((number_of_cores - 1))
 
 brew_install_or_upgrade 'heroku-toolbelt'

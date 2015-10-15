@@ -140,6 +140,7 @@ brew_install_or_upgrade 'hub'
 brew_install_or_upgrade 'autojump'
 brew_install_or_upgrade 'rmtrash'
 brew_install_or_upgrade 'ngrok'
+brew_install_or_upgrade 'vim'
 
 brew_install_or_upgrade 'nvm'
 append_to_zshrc 'eval "source $(brew --prefix nvm)/nvm.sh"'

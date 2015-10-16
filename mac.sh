@@ -127,9 +127,6 @@ fi
 fancy_echo "Updating Homebrew formulas ..."
 brew update
 
-fancy_echo "Removing old git installation and installing git from homebrew..."
-sudo rm -rf /usr/bin/git
-
 brew_install_or_upgrade 'git'
 brew_install_or_upgrade 'postgres'
 brew_launchctl_restart 'postgresql'

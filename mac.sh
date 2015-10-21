@@ -134,14 +134,10 @@ brew_install_or_upgrade 'mysql'
 brew_launchctl_restart 'mysql'
 brew_install_or_upgrade 'imagemagick'
 brew_install_or_upgrade 'hub'
-brew_install_or_upgrade 'autojump'
 brew_install_or_upgrade 'rmtrash'
 brew_install_or_upgrade 'ngrok'
 brew_install_or_upgrade 'vim'
-
-brew_install_or_upgrade 'nvm'
-append_to_zshrc 'eval "source $(brew --prefix nvm)/nvm.sh"'
-
+brew_install_or_upgrade 'node'
 brew_install_or_upgrade 'rbenv'
 brew_install_or_upgrade 'ruby-build'
 

@@ -137,9 +137,10 @@ brew_install_or_upgrade 'hub'
 brew_install_or_upgrade 'rmtrash'
 brew_install_or_upgrade 'ngrok'
 brew_install_or_upgrade 'vim'
-brew_install_or_upgrade 'node'
 brew_install_or_upgrade 'rbenv'
 brew_install_or_upgrade 'ruby-build'
+brew_install_or_upgrade 'nvm'
+brew_install_or_upgrade 'z'
 
 # shellcheck disable=SC2016
 append_to_zshrc 'eval "$(rbenv init - zsh --no-rehash)"' 1

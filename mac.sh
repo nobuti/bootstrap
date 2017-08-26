@@ -128,25 +128,22 @@ fancy_echo "Updating Homebrew formulas ..."
 brew update
 
 brew_install_or_upgrade 'git'
-brew_install_or_upgrade 'postgres'
-brew_launchctl_restart 'postgresql'
-brew_install_or_upgrade 'mysql'
-brew_launchctl_restart 'mysql'
+# brew_install_or_upgrade 'postgres'
+# brew_launchctl_restart 'postgresql'
+# brew_install_or_upgrade 'mysql'
+# brew_launchctl_restart 'mysql'
 brew_install_or_upgrade 'imagemagick'
-brew_install_or_upgrade 'hub'
-brew_install_or_upgrade 'rmtrash'
-brew_install_or_upgrade 'ngrok'
 brew_install_or_upgrade 'vim'
 brew_install_or_upgrade 'rbenv'
 brew_install_or_upgrade 'ruby-build'
 brew_install_or_upgrade 'nvm'
 brew_install_or_upgrade 'z'
+brew_install_or_upgrade 'tmux'
 
 # shellcheck disable=SC2016
 append_to_zshrc 'eval "$(rbenv init - zsh --no-rehash)"' 1
 
 brew_install_or_upgrade 'openssl'
-brew unlink openssl && brew link openssl --force
 brew_install_or_upgrade 'libyaml'
 
 ruby_version="$(curl -sSL http://ruby.thoughtbot.com/latest)"
@@ -168,4 +165,4 @@ fancy_echo "Configuring Bundler ..."
 number_of_cores=$(sysctl -n hw.ncpu)
 bundle config --global jobs $((number_of_cores - 1))
 
-brew_install_or_upgrade 'heroku-toolbelt'
+gem_install_or_update 'tmuxinator'
